@@ -29,8 +29,7 @@
 
 
 Запуск программы в docker:
-1. docker-compose build
-2. docker-compose up
+docker-compose up
 
 Сайт на django запустится по адресу: localhost:8000
 
