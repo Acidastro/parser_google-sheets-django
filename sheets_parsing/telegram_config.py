@@ -1,2 +1,2 @@
-token = "5447494379:AAFKlv8vap3xv1m9PiD-4rHU2XuD6bfGeIM"
+token = ""
 chat_id = "-1001762016051"
