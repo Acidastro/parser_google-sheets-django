@@ -1,2 +1,2 @@
-token = "xxx"
-chat_id = "-1001677944721"
+token = "5447494379:AAFKlv8vap3xv1m9PiD-4rHU2XuD6bfGeIM"
+chat_id = "-1001762016051"

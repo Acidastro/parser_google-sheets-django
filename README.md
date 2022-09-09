@@ -1,4 +1,3 @@
-
 Скрипт выполняет следующие функции:
 
 1. Получение данных из документа при помощи Google API, сделанного в [Google Sheets](https://docs.google.com/spreadsheets/d/1IP2qVacjpvBrV80RA9nbiU41ylg3KfYLoS4jR5Y9mKw/edit#gid=0) (Необходимо иметь права просмотра и редактирования).
@@ -28,7 +27,7 @@
     chat_id = "-1001677944721" # Узнать id поможет бот @getmyid_bot, переотправить в него сообщение из созданного канала
 
 
-Запуск программы в docker:
+Быстрый запуск через Docker:
 docker-compose up
 
 Сайт на django запустится по адресу: localhost:8000

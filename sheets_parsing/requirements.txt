@@ -7,3 +7,4 @@ psycopg2-binary==2.9.3
 bs4
 lxml
 notifiers
+requests

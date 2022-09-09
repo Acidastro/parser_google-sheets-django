@@ -8,7 +8,8 @@ from read_xml import currency_parsing
 from psycopg2.extensions import AsIs
 import time
 from datetime import datetime, date
-from telegram_notification import send_notification
+import requests
+from telegram_config import token, chat_id
 
 
 # Идея скрипта:
@@ -112,7 +113,9 @@ def use_send_notification(the_date: str, order_n: str):
     :return:
     """
     if past_date(the_date):
-        send_notification(f'Срок поставки {order_n} прошел ')
+        message = f'Срок поставки {order_n} прошел'
+        print(message)
+        requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={message}')
 
 
 # Проверяю на внесенные изменения
@@ -150,6 +153,7 @@ def check_for_changes():
                         use_send_notification(line_sheets[3], line_sheets[1])
     except (Exception, psycopg2.Error) as _ex:
         print('[INFO] Ошибка при работе с PostgreSQL', _ex)
+
 
 if __name__ == '__main__':
     while True:
