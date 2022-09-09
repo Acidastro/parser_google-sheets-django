@@ -1,0 +1,32 @@
+{% load split_filter %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>№</th>
+        <th>Ордер</th>
+        <th>Дата</th>
+        <th>Прайс</th>
+        <th>Прайс в рублях</th>
+
+    </tr>
+    {% for i in data|dictsort:'id' %}
+        <tr>
+            <td> {{ i.N }} </td>
+            <td> {{ i.order_N }} </td>
+            <td> {{ i.date }} </td>
+            <td> {{ i.price_dol }} </td>
+            <td> {{ i.price_rub }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
