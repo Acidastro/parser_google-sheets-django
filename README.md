@@ -10,25 +10,24 @@
     
 3. Скрипт работает постоянно для обеспечения обновления данных в онлайн режиме (учтено, что строки в Google Sheets таблицу могут удаляться, добавляться и изменяться).
 
-Запуск программы:
-1. Создать БД 'channel_service' на основе PostgreSQL, данные конфигурации хранятся в файле config.py
-2. Выполнить установки зависимостей:
 
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib oauth2client creds psycopg2 bs4 lxml notifiers
 
-3. Выполнить команду, которая создаст нужную таблицу
 
-python create.py
+НАСТРОЙКА УВЕДОМЛЕНИЙ В ТЕЛЕГРАМ:
 
-4. Создать файл 'telegram_config.py', 
-он содержит token бота и chat_id
-в который бот отправляет уведомления,
-в него заранее добавляем нашего бота как администратора.
-Узнать id поможет бот @getmyid_bot
+- Создать канал, в который будут приходить уведомления
+- Создать бота с помощью BotFather и добавить его администратором в созданный ранее канал
+- Редактировать файл 'telegram_config.py'
 
-6. Выполнение основного скрипта:
+    token = "xxx" # вставляем токен созданного бота помощью BotFather
+    chat_id = "-1001677944721" # Узнать id поможет бот @getmyid_bot, переотправить в него сообщение из созданного канала
 
-python main.py
+
+Запуск программы в docker:
+1. docker-compose build
+2. docker-compose up
+
+Сайт на django запустится по адресу: localhost:8000
 
 Ссылка на таблицу:
 [Google Sheets](https://docs.google.com/spreadsheets/d/1IP2qVacjpvBrV80RA9nbiU41ylg3KfYLoS4jR5Y9mKw/edit#gid=0)
